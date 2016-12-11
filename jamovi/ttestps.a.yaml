@@ -1,0 +1,41 @@
+---
+name: TTestPS
+title: Paired Samples T-Test
+version: "1.0.0"
+jmc: "1.0.0"
+
+options:
+    - name: data
+      type: Data
+
+    - name: x
+      title: x
+      type: Variable
+
+    - name: y
+      title: y
+      type: Variable
+
+    - name: alternative
+      title: alternative
+      type: List
+      options:
+        - two.sided
+        - less
+        - greater
+      default: two.sided
+
+    - name: mu
+      title: mu
+      type: Number
+      default: 0
+
+    - name: varEqual
+      title: var.equal
+      type: Bool
+      default: false
+
+    - name: confLevel
+      title: conf.level
+      type: Number
+      default: 0.95

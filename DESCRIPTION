@@ -1,0 +1,9 @@
+Package: jmvbaseR
+Type: Package
+Title: Base R analyses made available in jamovi
+Version: 0.1.0
+Author: Jonathon Love, Damian Dropmann
+Maintainer: Jonathon Love <jon@thon.cc>
+Description: A jamovi module which provides analyses from the base R packages
+License: GPL3
+LazyData: TRUE

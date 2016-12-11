@@ -1,0 +1,41 @@
+---
+name: TTestIS
+title: Independent Samples T-Test
+version: "1.0.0"
+jmc: "1.0.0"
+
+options:
+    - name: data
+      type: Data
+
+    - name: dependent
+      title: Dependent Variable
+      type: Variable
+
+    - name: grouping
+      title: Grouping Variable
+      type: Variable
+
+    - name: alternative
+      title: alternative
+      type: List
+      options:
+        - two.sided
+        - less
+        - greater
+      default: two.sided
+
+    - name: mu
+      title: mu
+      type: Number
+      default: 0
+
+    - name: varEqual
+      title: var.equal
+      type: Bool
+      default: false
+
+    - name: confLevel
+      title: conf.level
+      type: Number
+      default: 0.95

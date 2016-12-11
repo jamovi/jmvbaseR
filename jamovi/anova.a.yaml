@@ -1,0 +1,19 @@
+---
+name: Anova
+title: ANOVA
+version: "1.0.0"
+jmc: "1.0.0"
+
+options:
+    - name: data
+      type: Data
+      description: >
+        The data set as a data frame
+
+    - name: dep
+      title: Dependent Variable
+      type: Variable
+
+    - name: ind
+      title: Independent Variables
+      type: Variables
