@@ -25,7 +25,7 @@ const layout = ui.extend({
                    showColumnHeaders: false,
                    fullRowSelect: true,
                    columns: [
-                       { type: "listitem.variablelabel", name: "column1", label: "", format: FormatDef.variable, stretchFactor: 1 }
+                       { type: "listitem.variablelabel", name: "column1", label: "", stretchFactor: 1 }
                    ]
                 },
                 {
@@ -35,12 +35,16 @@ const layout = ui.extend({
                    showColumnHeaders: false,
                    fullRowSelect: true,
                    columns: [
-                       { type: "listitem.variablelabel", name: "column1", label: "", format: FormatDef.variable, stretchFactor: 1 }
+                       { type: "listitem.variablelabel", name: "column1", label: "", stretchFactor: 1 }
                    ]
                 }           ]
-        }   ],
-
-    actions: []
+        }   ]
 });
 
-module.exports = { ui : layout, options: options };
+var actions = Actions.extend({
+    events: [
+
+    ]
+});
+
+module.exports = { ui : layout, actions: actions, options: options };
