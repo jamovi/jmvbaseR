@@ -5,8 +5,9 @@
 'use strict';
 
 const options = require("./anova.options");
+const view = require('./anova.actions');
 
-const layout = ui.extend({
+view.layout = ui.extend({
 
     label: "ANOVA",
     type: "root",
@@ -37,14 +38,41 @@ const layout = ui.extend({
                    columns: [
                        { type: "listitem.variablelabel", name: "column1", label: "", stretchFactor: 1 }
                    ]
-                }           ]
-        }   ]
-});
-
-var actions = Actions.extend({
-    events: [
-
+                }
+            ]
+        },
+        {
+            name: "modelgroup",
+            type: "collapsebox",
+            label: "Model",
+            collapsed: true,
+            stretchFactor: 1,
+            controls : [
+                {
+                    type: "supplier",
+                    name: "modelSupplier",
+                    label: "Componets",
+                    persistentItems: true,
+                    stretchFactor: 1,
+                    controls: [
+                        {
+                            type:"targetlistbox",
+                            name: "modelTerms",
+                            format: FormatDef.term,
+                            label: "Model Terms",
+                            showColumnHeaders: false,
+                            valueFilter: "unique",
+                            itemDropBehaviour: "empty_space",
+                            columns: [
+                                { type: "listitem.termlabel", name: "column1", label: "", format: FormatDef.term, stretchFactor: 1 }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
     ]
 });
 
-module.exports = { ui : layout, actions: actions, options: options };
+
+module.exports = { view : view, options: options };

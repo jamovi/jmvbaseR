@@ -7,26 +7,36 @@ AnovaOptions <- R6::R6Class(
     public = list(
         initialize = function(
             dep = NULL,
-            ind = NULL, ...) {
+            ind = NULL,
+            modelTerms = NULL, ...) {
 
             super$initialize(package='jmvbaseR', name='Anova', ...)
         
             private$..dep <- jmvcore::OptionVariable$new(
                 "dep",
-                dep)
+                dep,
+                default=NULL)
             private$..ind <- jmvcore::OptionVariables$new(
                 "ind",
-                ind)
+                ind,
+                default=NULL)
+            private$..modelTerms <- jmvcore::OptionTerms$new(
+                "modelTerms",
+                modelTerms,
+                default=NULL)
         
             self$.addOption(private$..dep)
             self$.addOption(private$..ind)
+            self$.addOption(private$..modelTerms)
         }),
     active = list(
         dep = function() private$..dep$value,
-        ind = function() private$..ind$value),
+        ind = function() private$..ind$value,
+        modelTerms = function() private$..modelTerms$value),
     private = list(
         ..dep = NA,
-        ..ind = NA)
+        ..ind = NA,
+        ..modelTerms = NA)
 )
 
 AnovaResults <- R6::R6Class(
@@ -56,12 +66,14 @@ AnovaBase <- R6::R6Class(
 
 Anova <- function(
     data,
-    dep,
-    ind) {
+    dep = NULL,
+    ind = NULL,
+    modelTerms = NULL) {
 
     options <- AnovaOptions$new(
         dep = dep,
-        ind = ind)
+        ind = ind,
+        modelTerms = modelTerms)
 
     results <- AnovaResults$new(
         options = options)

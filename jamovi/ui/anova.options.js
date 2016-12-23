@@ -3,4 +3,4 @@
 
 'use strict';
 
-module.exports = [{"name":"data","type":"Data","description":"The data set as a data frame\n"},{"name":"dep","title":"Dependent Variable","type":"Variable"},{"name":"ind","title":"Independent Variables","type":"Variables"}];
+module.exports = [{"name":"data","type":"Data","description":"The data set as a data frame\n"},{"name":"dep","title":"Dependent Variable","type":"Variable","default":null},{"name":"ind","title":"Independent Variables","type":"Variables","default":null},{"name":"modelTerms","title":"Model Terms","type":"Terms","default":null,"description":"The model terms\n"}];

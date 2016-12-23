@@ -6,7 +6,18 @@
 
 const options = require("./ttestones.options");
 
-const layout = ui.extend({
+const view = View.extend({
+
+    initialize: function(ui) {
+
+    },
+
+    events: [
+
+    ]
+});
+
+view.layout = ui.extend({
 
     label: "One Sample T-Test",
     type: "root",
@@ -44,10 +55,5 @@ const layout = ui.extend({
         }   ]
 });
 
-var actions = Actions.extend({
-    events: [
 
-    ]
-});
-
-module.exports = { ui : layout, actions: actions, options: options };
+module.exports = { view : view, options: options };
