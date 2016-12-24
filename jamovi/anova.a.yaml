@@ -13,7 +13,16 @@ options:
     - name: dep
       title: Dependent Variable
       type: Variable
+      default:
 
     - name: ind
       title: Independent Variables
       type: Variables
+      default:
+
+    - name: modelTerms
+      title: Model Terms
+      type: Terms
+      default:
+      description: >
+        The model terms
