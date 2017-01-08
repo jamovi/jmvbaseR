@@ -3,37 +3,37 @@ title: Independent Samples T-Test
 jus:   '1.0'
 
 children:
-  - type: variablesupplier
+  - type: VariableSupplier
     persistentItems: false
     stretchFactor: 1
     children:
       - name: dependent
-        type: variabletargetlistbox
+        type: VariableTargetListBox
         label: Dependent Variable
         showColumnHeaders: false
         maxItemCount: 1
         columns:
-          - type: listitem.variablelabel
+          - type: ListItem.VariableLabel
             name: column1
             label:
             stretchFactor: 1
 
-      - type: variabletargetlistbox
+      - type: VariableTargetListBox
         name: grouping
         label: Grouping Variable
         showColumnHeaders: false
         maxItemCount: 1
         columns:
-          - type: listitem.variablelabel
+          - type: ListItem.VariableLabel
             name: column1
             label:
             stretchFactor: 1
 
-  - type: layoutbox
+  - type: LayoutBox
     margin: large
     stretchFactor: 1
     children:
-      - type: combobox
+      - type: ComboBox
         name: alternative
         label: alternative
         options:
@@ -44,25 +44,25 @@ children:
           - label: greater
             value: greater
 
-      - type: textbox
+      - type: TextBox
         name: mu
         label: mu
         format: number
         inputPattern: "[0-9]+"
 
-  - type: layoutbox
+  - type: LayoutBox
     margin: large
     stretchFactor: 1
     children:
-      - type: checkbox
+      - type: CheckBox
         name: varEqual
         label: var.equal
 
-  - type: layoutbox
+  - type: LayoutBox
     margin: large
     stretchFactor: 1
     children:
-      - type: textbox
+      - type: TextBox
         name: confLevel
         label: conf.level
         format: number
