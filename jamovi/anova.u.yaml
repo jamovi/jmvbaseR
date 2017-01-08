@@ -1,0 +1,61 @@
+name:  Ancova
+title: ANCOVA
+jus:   '1.0'
+
+update: ./anova.events::update
+
+children:
+  - type: VariableSupplier
+    name: variablesupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - name: dep
+        type: VariableTargetListBox
+        label: Dependent Variable
+        showColumnHeaders: false
+        maxItemCount: 1
+        itemDropBehaviour: overwrite
+        columns:
+          - type: ListItem.VariableLabel
+            name: column1
+            label:
+            stretchFactor: 1
+
+      - type: VariableTargetListBox
+        name: ind
+        label: Independent Variables
+        showColumnHeaders: false
+        events:
+            change: ./anova.events::onChange_ind
+        columns:
+          - type: ListItem.VariableLabel
+            name: column1
+            label:
+            stretchFactor: 1
+
+  - type: CollapseBox
+    label: Model
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: Supplier
+        name: modelSupplier
+        label: Componets
+        persistentItems: true
+        stretchFactor: 1
+        children:
+          - type: TargetListBox
+            name: modelTerms
+            label: Model Terms
+            valueFilter: unique
+            showColumnHeaders: false
+            itemDropBehaviour: emptyspace
+            events:
+                change: ./anova.events::onChange_modelTerms
+                preprocess: ./anova.events::onEvent_modelTerms_preprocess
+            columns:
+              - type: ListItem.TermLabel
+                name: column1
+                label:
+                stretchFactor: 1
