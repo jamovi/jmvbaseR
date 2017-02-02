@@ -1,17 +1,18 @@
+---
 title: Base R
 name: jmvbaseR
-version: 0.1.0
+version: 0.2.0
+jms: '1.0'
 authors:
   - Jonathon Love
   - Damian Dropmann
 maintainer: Jonathon Love <jon@thon.cc>
-date: '1970-01-01'
+date: '2017-02-02'
 type: R
 description: Makes base R analyses available in jamovi
-jmc: 1.0.0
 analyses:
   - title: Independent Samples T-Test
-    name: TTestIS
+    name: ttestIS
     ns: jmvbaseR
     menuGroup: Base R
     menuSubgroup: null
@@ -19,7 +20,7 @@ analyses:
     menuSubtitle: null
     description: null
   - title: Paired Samples T-Test
-    name: TTestPS
+    name: ttestPS
     ns: jmvbaseR
     menuGroup: Base R
     menuSubgroup: null
@@ -27,7 +28,7 @@ analyses:
     menuSubtitle: null
     description: null
   - title: One Sample T-Test
-    name: TTestOneS
+    name: ttestOneS
     ns: jmvbaseR
     menuGroup: Base R
     menuSubgroup: null
@@ -35,10 +36,12 @@ analyses:
     menuSubtitle: null
     description: null
   - title: ANOVA
-    name: Anova
+    name: anova
     ns: jmvbaseR
     menuGroup: Base R
     menuSubgroup: ANOVA
     menuTitle: ANOVA
     menuSubtitle: null
     description: null
+
+...

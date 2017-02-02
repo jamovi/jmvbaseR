@@ -1,4 +1,4 @@
-name:  TTestOneS
+name:  ttestOneS
 title: One Sample T-Test
 jus:   '1.0'
 
@@ -24,13 +24,13 @@ children:
     children:
       - type: ComboBox
         name: alternative
-        label: alternative
+        label: Alternative hypothesis
         options:
-          - label: two.sided
+          - label: Two sided
             value: two.sided
-          - label: less
+          - label: Less
             value: less
-          - label: greater
+          - label: Greater
             value: greater
 
       - type: TextBox
@@ -41,6 +41,6 @@ children:
 
       - type: TextBox
         name: confLevel
-        label: conf.level
+        label: Confidence interval width
         format: number
         inputPattern: "[0-9]+"

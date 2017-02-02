@@ -1,7 +1,7 @@
 
-TTestOneSClass <- R6::R6Class(
-    "TTestOneSClass",
-    inherit = TTestOneSBase,
+ttestOneSClass <- R6::R6Class(
+    "ttestOneSClass",
+    inherit = ttestOneSBase,
     private = list(
         .init = function() {
             preformatted <- jmvcore::Preformatted$new(self$options, 'pre')

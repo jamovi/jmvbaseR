@@ -1,20 +1,27 @@
 ---
-name: TTestPS
+name: ttestPS
 title: Paired Samples T-Test
-version: "1.0.0"
-jmc: "1.0.0"
+version: '1.0.0'
+jas: '1.0'
+menuGroup: Base R
 
 options:
     - name: data
       type: Data
+      description:
+          R: the data as a data frame
 
     - name: x
       title: x
       type: Variable
+      description:
+          R: a string specifying the first measurement in `data`
 
     - name: y
       title: y
       type: Variable
+      description:
+          R: a string specifying the second measurement in `data`
 
     - name: alternative
       title: alternative
@@ -24,18 +31,29 @@ options:
         - less
         - greater
       default: two.sided
+      description:
+          R: >
+            `'two.sided'`, `'less'`, or `'greater'`
 
     - name: mu
       title: mu
       type: Number
       default: 0
+      description:
+          R: a number, the mean of the null hypothesis
 
     - name: varEqual
       title: var.equal
       type: Bool
       default: false
+      description:
+          R: TRUE or FALSE (default), assume equal variances
 
     - name: confLevel
       title: conf.level
       type: Number
       default: 0.95
+      description:
+          R: >
+            a number between 0 and 1 (default: 0.95), specifying the confidence
+            interval width

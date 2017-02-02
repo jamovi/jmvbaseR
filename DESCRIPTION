@@ -1,9 +1,13 @@
 Package: jmvbaseR
 Type: Package
 Title: Base R analyses made available in jamovi
-Version: 0.1.0
+Version: 0.2.0
+Date: 2017-02-02
 Author: Jonathon Love, Damian Dropmann
 Maintainer: Jonathon Love <jon@thon.cc>
 Description: A jamovi module which provides analyses from the base R packages
 License: GPL3
 LazyData: TRUE
+Imports:
+    jmvcore (>= 0.3.0)
+RoxygenNote: 5.0.1

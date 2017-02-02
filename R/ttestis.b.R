@@ -1,7 +1,7 @@
 
-TTestISClass <- R6::R6Class(
-    "TTestISClass",
-    inherit = TTestISBase,
+ttestISClass <- R6::R6Class(
+    "ttestISClass",
+    inherit = ttestISBase,
     private = list(
         .init = function() {
             preformatted <- jmvcore::Preformatted$new(self$options, 'pre')
@@ -67,6 +67,6 @@ TTestISClass <- R6::R6Class(
             if (args != '')
                 args <- paste0(',', args)
 
-            paste0('t.test(\n    formula=', formula, ',\n    data=data', args, ')')
+            paste0('t.test(\n    formula=', formula, args, ')')
         })
 )

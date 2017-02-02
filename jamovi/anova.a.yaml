@@ -1,28 +1,33 @@
 ---
-name: Anova
+name: anova
 title: ANOVA
 version: "1.0.0"
-jmc: "1.0.0"
+jas: "1.0"
+menuGroup: Base R
 
 options:
     - name: data
       type: Data
-      description: >
-        The data set as a data frame
+      description:
+          R: the data set as a data frame
 
     - name: dep
       title: Dependent Variable
       type: Variable
       default:
+      description:
+          R: a string specifying the dependent variable in `data`
 
     - name: ind
       title: Independent Variables
       type: Variables
       default:
+      description:
+          R: a vector of strings specifying the independent variables in `data`
 
     - name: modelTerms
       title: Model Terms
       type: Terms
       default:
-      description: >
-        The model terms
+      description:
+          R: a list of string vectors specifying the model terms

@@ -1,7 +1,7 @@
 
-TTestPSClass <- R6::R6Class(
-    "TTestPSClass",
-    inherit = TTestPSBase,
+ttestPSClass <- R6::R6Class(
+    "ttestPSClass",
+    inherit = ttestPSBase,
     private = list(
         .init = function() {
             preformatted <- jmvcore::Preformatted$new(self$options, 'pre')
@@ -35,6 +35,8 @@ TTestPSClass <- R6::R6Class(
                 return('')
             if (option$name == 'y')
                 return('')
+            if (option$name == 'data')
+                return('')
             if (option$name == 'varEqual') {
                 if (isTRUE(option$value))
                     return('var.equal=TRUE')
@@ -52,7 +54,7 @@ TTestPSClass <- R6::R6Class(
         }),
     public=list(
         asSource=function() {
-            args <- private$.asArgs()
+            args <- private$.asArgs(incData=FALSE)
             if (args != '')
                 args <- paste0(',', args)
             paste0('t.test(\n    x=data$x,\n    y=data$y,\n    paired=TRUE', args, ')')
