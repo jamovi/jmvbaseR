@@ -1,5 +1,5 @@
-name: anova
-title: ANOVA
+name: regression
+title: Linear Regression
 jus: '2.0'
 events:
   update: './anova.events::update'

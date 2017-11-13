@@ -1,34 +1,39 @@
-name:  ttestPS
+name: ttestPS
 title: Paired Samples T-Test
-jus:   '1.0'
-
+jus: '2.0'
 children:
   - type: VariableSupplier
     persistentItems: false
     stretchFactor: 1
     children:
-      - name: x
-        type: VariableTargetListBox
-        label: x
-        showColumnHeaders: false
-        maxItemCount: 1
-        columns:
-          - type: ListItem.VariableLabel
-            name: column1
-            label:
-            stretchFactor: 1
-
-      - type: VariableTargetListBox
-        name: y
-        label: y
-        showColumnHeaders: false
-        maxItemCount: 1
-        columns:
-          - type: ListItem.VariableLabel
-            name: column1
-            label:
-            stretchFactor: 1
-
+      - type: TargetLayoutBox
+        children:
+          - name: x
+            type: VariablesListBox
+            label: x
+            showColumnHeaders: false
+            maxItemCount: 1
+            columns:
+              - name: column1
+                label: null
+                stretchFactor: 1
+                template:
+                  type: VariableLabel
+            isTarget: true
+      - type: TargetLayoutBox
+        children:
+          - type: VariablesListBox
+            name: 'y'
+            label: 'y'
+            showColumnHeaders: false
+            maxItemCount: 1
+            columns:
+              - name: column1
+                label: null
+                stretchFactor: 1
+                template:
+                  type: VariableLabel
+            isTarget: true
   - type: LayoutBox
     margin: large
     stretchFactor: 1
@@ -37,19 +42,17 @@ children:
         name: alternative
         label: Alternative hypothesis
         options:
-          - label: Two sided
-            value: two.sided
-          - label: Less
-            value: less
-          - label: Greater
-            value: greater
-
+          - title: Two sided
+            name: two.sided
+          - title: Less
+            name: less
+          - title: Greater
+            name: greater
       - type: TextBox
         name: mu
         label: mu
         format: number
-        inputPattern: "[0-9]+"
-
+        inputPattern: '[0-9]+'
   - type: LayoutBox
     margin: large
     stretchFactor: 1
@@ -57,7 +60,6 @@ children:
       - type: CheckBox
         name: varEqual
         label: Assume equal variances
-
   - type: LayoutBox
     margin: large
     stretchFactor: 1
@@ -66,4 +68,5 @@ children:
         name: confLevel
         label: Confidence interval width
         format: number
-        inputPattern: "[0-9]+"
+        inputPattern: '[0-9]+'
+compilerMode: tame
