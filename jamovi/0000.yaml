@@ -15,7 +15,7 @@ analyses:
     name: ttestIS
     ns: jmvbaseR
     menuGroup: Base R
-    menuSubgroup: null
+    menuSubgroup: T-Test
     menuTitle: Independent Samples T-Test
     menuSubtitle: null
     description: null
@@ -23,7 +23,7 @@ analyses:
     name: ttestPS
     ns: jmvbaseR
     menuGroup: Base R
-    menuSubgroup: null
+    menuSubgroup: T-Test
     menuTitle: Paired Samples T-Test
     menuSubtitle: null
     description: null
@@ -31,7 +31,7 @@ analyses:
     name: ttestOneS
     ns: jmvbaseR
     menuGroup: Base R
-    menuSubgroup: null
+    menuSubgroup: T-Test
     menuTitle: One Sample T-Test
     menuSubtitle: null
     description: null
@@ -43,5 +43,17 @@ analyses:
     menuTitle: ANOVA
     menuSubtitle: null
     description: null
+  - title: Correlation
+    name: correlation
+    ns: jmvbaseR
+    menuGroup: Base R
+    menuSubgroup: Regression
+    menuTitle: Correlation
+  - title: Linear Regression
+    name: regression
+    ns: jmvbaseR
+    menuGroup: Base R
+    menuSubgroup: Regression
+    menuTitle: Linear Regression
 
 ...

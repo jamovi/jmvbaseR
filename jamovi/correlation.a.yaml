@@ -1,0 +1,58 @@
+---
+name:  correlation
+title: Correlation
+version: '1.0.0'
+jas: '1.0'
+menuGroup: Base R
+
+options:
+    - name: data
+      type: Data
+      description:
+          R: the data as a data frame
+
+    - name: x
+      title: x
+      type: Variable
+      description:
+          R: a string specifying the first measurement in `data`
+
+    - name: y
+      title: y
+      type: Variable
+      description:
+          R: a string specifying the second measurement in `data`
+
+    - name: alternative
+      title: Alternative hypothesis
+      type: List
+      options:
+        - two.sided
+        - less
+        - greater
+      default: two.sided
+      description:
+          R: >
+            `'two.sided'`, `'less'`, or `'greater'`
+
+    - name: method
+      title: Correlation coefficient
+      type: List
+      options:
+        - pearson
+        - kendall
+        - spearman
+      default: pearson
+      description:
+          R: >
+            `'pearson'`, `'kendall'`, or `'spearman'`
+
+    - name: conf.level
+      title: Confidence interval width
+      type: Number
+      default: 0.95
+      description:
+          R: >
+            a number between 0 and 1 (default: 0.95), specifying the confidence
+            interval width
+...

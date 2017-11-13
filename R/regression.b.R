@@ -1,7 +1,7 @@
 
-anovaClass <- if (requireNamespace('jmvcore')) R6::R6Class(
-    "anovaClass",
-    inherit = anovaBase,
+regressionClass <- if (requireNamespace('jmvcore')) R6::R6Class(
+    "regressionClass",
+    inherit = regressionBase,
     private = list(
         .init = function() {
             pre <- jmvcore::Preformatted$new(self$options, 'pre')
@@ -24,8 +24,7 @@ anovaClass <- if (requireNamespace('jmvcore')) R6::R6Class(
             formula <- as.formula(formula)
 
             model <- stats::lm(formula=formula, data=data)
-
-            r <- stats::anova(model)
+            r <- stats::summary.lm(model)
 
             pre$content <- paste0(capture.output(r), collapse='\n')
         },
@@ -64,7 +63,7 @@ anovaClass <- if (requireNamespace('jmvcore')) R6::R6Class(
         asSource=function() {
             formula <- private$.formula()
             model <- paste0('model <- lm(\n    formula = ', formula, ',\n    data = data\n)\n')
-            anova <- paste0('anova(model)\n')
-            paste(model, anova, sep='\n')
+            coef <- paste0('summary(model)\n')
+            paste(model, coef, sep='\n')
         })
 )
