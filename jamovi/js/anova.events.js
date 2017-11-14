@@ -11,27 +11,22 @@ const events = {
 
     onChange_modelTerms: function(ui) {
         filterModelTerms(ui, this);
-    },
-
-    onEvent_modelTerms_preprocess: function(ui, data) {
-        if (data.intoSelf === false)
-            data.items = this.getItemCombinations(data.items);
     }
 };
 
-var calcModelTerms = function(ui, context) {
-    var variableList = context.cloneArray(ui.ind.value(), []);
+let calcModelTerms = function(ui, context) {
+    let variableList = context.cloneArray(ui.ind.value(), []);
 
     ui.modelSupplier.setValue(context.valuesToItems(variableList, FormatDef.variable));
 
-    var varsDiff = context.findChanges("variableList", variableList, true, FormatDef.variable);
+    let varsDiff = context.findChanges("variableList", variableList, true, FormatDef.variable);
 
-    var termsList = context.cloneArray(ui.modelTerms.value(), []);
+    let termsList = context.cloneArray(ui.modelTerms.value(), []);
 
-    var termsChanged = false;
+    let termsChanged = false;
 
-    for (var i = 0; i < varsDiff.removed.length; i++) {
-        for (var j = 0; j < termsList.length; j++) {
+    for (let i = 0; i < varsDiff.removed.length; i++) {
+        for (let j = 0; j < termsList.length; j++) {
             if (FormatDef.term.contains(termsList[j], varsDiff.removed[i])) {
                 termsList.splice(j, 1);
                 termsChanged = true;
@@ -40,24 +35,30 @@ var calcModelTerms = function(ui, context) {
         }
     }
 
-    termsList = context.getCombinations(varsDiff.added, termsList);
+    if (ui.view.model.ui.label === 'Linear Regression') {
+        for (let i = 0; i < varsDiff.added.length; i++)
+            termsList.push([varsDiff.added[i]]);
+    }
+    else
+        termsList = context.getCombinations(varsDiff.added, termsList);
+
     termsChanged = termsChanged || varsDiff.added.length > 0;
 
     if (termsChanged)
         ui.modelTerms.setValue(termsList);
 };
 
-var filterModelTerms = function(ui, context) {
-    var termsList = context.cloneArray(ui.modelTerms.value(), []);
+let filterModelTerms = function(ui, context) {
+    let termsList = context.cloneArray(ui.modelTerms.value(), []);
 
-    var termsDiff = context.findChanges("currentList", termsList, true, FormatDef.term);
+    let termsDiff = context.findChanges("currentList", termsList, true, FormatDef.term);
 
-    var changed = false;
+    let changed = false;
     if (termsDiff.removed.length > 0 && termsList !== null) {
-        var itemsRemoved = false;
-        for (var i = 0; i < termsDiff.removed.length; i++) {
-            var item = termsDiff.removed[i];
-            for (var j = 0; j < termsList.length; j++) {
+        let itemsRemoved = false;
+        for (let i = 0; i < termsDiff.removed.length; i++) {
+            let item = termsDiff.removed[i];
+            for (let j = 0; j < termsList.length; j++) {
                 if (FormatDef.term.contains(termsList[j], item)) {
                     termsList.splice(j, 1);
                     j -= 1;
