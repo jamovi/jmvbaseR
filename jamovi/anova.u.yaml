@@ -1,6 +1,7 @@
 name: anova
 title: ANOVA
 jus: '2.0'
+compilerMode: tame
 events:
   update: './anova.events::update'
 children:
@@ -51,21 +52,14 @@ children:
         stretchFactor: 1
         children:
           - type: TargetLayoutBox
+            transferAction: interactions
             children:
               - type: ListBox
                 name: modelTerms
-                label: Model Terms
                 valueFilter: unique
-                showColumnHeaders: false
+                isTarget: true
                 itemDropBehaviour: emptyspace
                 events:
                   change: './anova.events::onChange_modelTerms'
-                  preprocess: './anova.events::onEvent_modelTerms_preprocess'
-                columns:
-                  - name: column1
-                    label: null
-                    stretchFactor: 1
-                    template:
-                      type: TermLabel
-                isTarget: true
-compilerMode: tame
+                template:
+                    type: TermLabel
