@@ -1,15 +1,20 @@
 ---
 title: Base R
 name: jmvbaseR
-version: 0.2.0
+version: 1.1.1
 jms: '1.0'
 authors:
   - Jonathon Love
   - Damian Dropmann
+  - Ravi Selker
 maintainer: Jonathon Love <jon@thon.cc>
-date: '2017-02-02'
+date: '2017-11-13'
 type: R
-description: Makes base R analyses available in jamovi
+description: >
+  A simple module which makes the analyses from the stats package (included with
+  R) useable from jamovi. This module is ideal for teaching and learning R (when
+  run in 'syntax mode') as it demonstrates the syntax for some basic but common
+  R analyses.
 analyses:
   - title: Independent Samples T-Test
     name: ttestIS
