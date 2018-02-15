@@ -1,14 +1,14 @@
 ---
 title: Base R
 name: jmvbaseR
-version: 1.1.1
+version: 1.1.2
 jms: '1.0'
 authors:
   - Jonathon Love
   - Damian Dropmann
   - Ravi Selker
 maintainer: Jonathon Love <jon@thon.cc>
-date: '2017-11-13'
+date: '2018-02-15'
 type: R
 description: >
   A simple module which makes the analyses from the stats package (included with

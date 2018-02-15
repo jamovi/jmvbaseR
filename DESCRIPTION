@@ -1,7 +1,7 @@
 Package: jmvbaseR
 Type: Package
 Title: Base R analyses made available in jamovi
-Version: 1.1.1
+Version: 1.1.2
 Date: 2017-11-15
 Author: Jonathon Love, Damian Dropmann, Ravi Selker
 Maintainer: Jonathon Love <jon@thon.cc>
