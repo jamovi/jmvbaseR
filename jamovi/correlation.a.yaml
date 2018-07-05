@@ -2,7 +2,7 @@
 name:  correlation
 title: Correlation
 version: '1.0.0'
-jas: '1.0'
+jas: '1.2'
 menuGroup: Base R
 
 options:
