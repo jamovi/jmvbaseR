@@ -32,5 +32,4 @@ children:
       - type: TextBox
         name: conf.level
         format: number
-        inputPattern: '[0-9]+'
         enable: (method:pearson)
