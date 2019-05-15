@@ -11,6 +11,11 @@ const events = {
 
     onChange_modelTerms: function(ui) {
         filterModelTerms(ui, this);
+    },
+
+    onUpdate_modelSupplier: function(ui) {
+        let variableList = this.cloneArray(ui.ind.value(), []);
+        ui.modelSupplier.setValue(this.valuesToItems(variableList, FormatDef.variable));
     }
 };
 

@@ -52,7 +52,6 @@ children:
         name: mu
         label: mu
         format: number
-        inputPattern: '[0-9]+'
   - type: LayoutBox
     margin: large
     stretchFactor: 1
@@ -68,5 +67,4 @@ children:
         name: confLevel
         label: Confidence interval width
         format: number
-        inputPattern: '[0-9]+'
 compilerMode: tame

@@ -38,10 +38,8 @@ children:
         name: mu
         label: mu
         format: number
-        inputPattern: '[0-9]+'
       - type: TextBox
         name: confLevel
         label: Confidence interval width
         format: number
-        inputPattern: '[0-9]+'
 compilerMode: tame

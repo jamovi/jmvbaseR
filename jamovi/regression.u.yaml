@@ -50,6 +50,8 @@ children:
         label: Components
         persistentItems: true
         stretchFactor: 1
+        events:
+          update: './anova.events::onUpdate_modelSupplier'
         children:
           - type: TargetLayoutBox
             transferAction: interactions
